@@ -1,0 +1,18 @@
+/* Variables */
+
+:root {
+    --color-texto: rgb(0, 0, 0);
+    --color-fondo: rgb(245, 245, 245);
+    --color-boton: rgb(178, 76, 56);
+    --color-pie: rgb(48, 46, 46);
+}
+
+
+/* Elementos genéricos */
+
+body {
+    background-color: rgb(243, 245, 238);
+    color: var(--color-texto);
+    background-color: var(--color-fondo);
+    font-family: 'Arvo', sans-serif;
+}
