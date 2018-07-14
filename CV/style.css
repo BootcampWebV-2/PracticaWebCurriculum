@@ -1,8 +1,10 @@
 /* Variables */
 
 :root {
+    --color-cabecera: rgb(249, 249, 249);
     --color-texto: rgb(0, 0, 0);
-    --color-fondo: rgb(245, 245, 245);
+    --color-nav: rgb(238, 120, 96);
+    --color-fondo: rgb(241, 243, 245);
     --color-boton: rgb(178, 76, 56);
     --color-pie: rgb(48, 46, 46);
 }
@@ -15,4 +17,162 @@ body {
     color: var(--color-texto);
     background-color: var(--color-fondo);
     font-family: 'Arvo', sans-serif;
+}
+
+section h1 {
+    font-size: 5rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 800;
+}
+
+article p:nth-of-type(1) {
+    font-size: 1.1rem;
+}
+
+article p {
+    font-family: 'Lora', serif;
+}
+
+
+/* Elementos iniciales: Header y Nav*/
+
+body>header,
+body>nav {
+    color: var(--color-nav);
+}
+
+nav.menu-top {
+    display: inline;
+}
+
+nav.menu-top,
+nav.menu-icon {
+    position: absolute;
+    z-index: 1;
+    right: 20%;
+    top: 1rem;
+    font-weight: 800;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+}
+
+nav.menu-top li,
+footer nav li {
+    display: inline-block;
+}
+
+nav a {
+    display: block;
+    padding: .5rem 1rem;
+    transition: all 0.8s linear;
+}
+
+nav.menu-icon {
+    font-size: 1.2rem;
+}
+
+body>header {
+    position: absolute;
+    z-index: 1;
+    top: 1rem;
+    left: 20%;
+    width: 50%;
+}
+
+section#who article {
+    margin-top: 5rem;
+    padding-bottom: 4rem;
+    /* border-bottom: 1px solid var(--color-texto)*/
+}
+
+section#who article>p {
+    font-size: 1.1rem;
+    margin-top: 1rem;
+}
+
+
+/* HEADER interno con IMAGEN DE FONDO */
+
+div.header {
+    height: 10vh;
+    color: var(--color-nav);
+    position: relative;
+}
+
+section header {
+    height: 50vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    color: var(--color-fondo);
+    position: relative;
+}
+
+section#who header {
+    background-image: url(./asset/home.jpg);
+}
+
+section .title-wrapper {
+    position: absolute;
+    z-index: 1;
+    height: 20%;
+    width: 40%;
+    top: 50%;
+    left: 50%;
+    background-color: rgba(255, 99, 71, 0.7);
+    color: rgba(247, 240, 239, 0.7);
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+section header::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: var(--color-texto);
+    opacity: 0.5;
+}
+
+section .content-wrapper,
+nav.content-wrapper {
+    width: 67%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2rem;
+}
+
+
+/* Footer*/
+
+div.footer {
+    height: 10vh;
+    color: var(--color-nav);
+    background-color: var(--color-pie);
+    padding-left: 15%;
+    position: relative;
+}
+
+body>footer {
+    margin-top: 1rem;
+    border-top: 1px solid var(--color-texto);
+    padding-top: 1rem;
+    text-align: left;
+}
+
+body>footer nav {
+    font-size: .5rem;
+}
+
+body>footer small {
+    color: var(--color-fondo);
 }
