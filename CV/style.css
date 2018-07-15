@@ -7,16 +7,21 @@
     --color-fondo: rgb(241, 243, 245);
     --color-boton: rgb(178, 76, 56);
     --color-pie: rgb(48, 46, 46);
+    --color-activo: goldenrod;
 }
 
 
 /* Elementos genéricos */
 
 body {
-    background-color: rgb(243, 245, 238);
+    /*background-color: rgb(243, 245, 238);*/
     color: var(--color-texto);
     background-color: var(--color-fondo);
     font-family: 'Arvo', sans-serif;
+}
+
+.hide {
+    display: none;
 }
 
 section h1 {
@@ -36,36 +41,48 @@ article p:nth-of-type(1) {
     font-size: 1.1rem;
 }
 
-article p {
+article p,
+pre {
     font-family: 'Lora', serif;
+}
+
+.foto-wrapper a:link {
+    color: blue;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+.foto-wrapper a:visited {
+    color: green;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+.foto-wrapper a:hover {
+    color: red;
+    background-color: transparent;
+    text-decoration: underline;
+}
+
+.foto-wrapper a:active {
+    color: yellow;
+    background-color: transparent;
+    text-decoration: underline;
 }
 
 
 /* Elementos iniciales: Header y Nav*/
 
-body>header,
-body>nav {
+.header-wrapper header {
     color: var(--color-nav);
-}
-
-nav.menu-top {
-    display: inline;
-}
-
-nav.menu-top,
-nav.menu-icon {
     position: absolute;
     z-index: 1;
-    right: 20%;
-    top: 1rem;
-    font-weight: 800;
-    font-size: 0.75rem;
-    text-transform: uppercase;
 }
 
-nav.menu-top li,
-footer nav li {
-    display: inline-block;
+.header-wrapper header {
+    top: 1rem;
+    left: 20%;
+    width: 50%;
 }
 
 nav a {
@@ -74,37 +91,43 @@ nav a {
     transition: all 0.8s linear;
 }
 
-nav.menu-icon {
-    font-size: 1.2rem;
-}
-
-body>header {
+.header-wrapper nav {
+    color: var(--color-fondo);
     position: absolute;
     z-index: 1;
+}
+
+nav.menu-icon {
+    font-size: 1.2rem;
+    right: 20%;
     top: 1rem;
-    left: 20%;
-    width: 50%;
+    font-weight: 800;
 }
 
-section#who article {
-    margin-top: 5rem;
-    padding-bottom: 4rem;
-    /* border-bottom: 1px solid var(--color-texto)*/
+nav.menu-top {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    left: 2%;
+    top: 3rem;
+    font-weight: 800;
+    color: var(--color-boton);
+    background-color: var(--color-fondo);
+    width: 100%;
 }
 
-section#who article>p {
-    font-size: 1.1rem;
-    margin-top: 1rem;
+nav.menu-bottom {
+    background-color: var(--color-nav)
+}
+
+
+/* Menu de Iconos sociales */
+
+footer nav li {
+    display: inline-block;
 }
 
 
 /* HEADER interno con IMAGEN DE FONDO */
-
-div.header {
-    height: 10vh;
-    color: var(--color-nav);
-    position: relative;
-}
 
 section header {
     height: 50vh;
@@ -140,7 +163,7 @@ section header::after {
     bottom: 0;
     right: 0;
     background-color: var(--color-texto);
-    opacity: 0.5;
+    opacity: 0.4;
 }
 
 section .content-wrapper,
@@ -149,6 +172,143 @@ nav.content-wrapper {
     margin-left: auto;
     margin-right: auto;
     margin-top: 2rem;
+}
+
+
+/* Section WHO (POSTS) */
+
+section#who header h1 {
+    font-size: 0.2rem;
+    margin-bottom: 2rem;
+    display: inline-block;
+    animation: titulo 3s linear;
+    animation-fill-mode: forwards;
+}
+
+section#who p {
+    width: 60%;
+    padding-top: 2%;
+    padding-left: 12%;
+}
+
+@keyframes titulo {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    20% {
+        transform: scale(2);
+        opacity: 0.2;
+    }
+    40% {
+        transform: scale(4);
+        opacity: 0.4;
+    }
+    60% {
+        transform: scale(6);
+        opacity: 0.6;
+    }
+    80% {
+        transform: scale(8);
+        opacity: 0.8;
+    }
+    100% {
+        transform: scale(10);
+        opacity: 1;
+    }
+}
+
+
+/*  Imagen */
+
+figure.imagen {
+    height: 8%;
+    width: 8%;
+}
+
+section .foto-wrapper {
+    margin: 1rem;
+    display: flex;
+    flex-direction: row;
+}
+
+
+/* Section Estudios*/
+
+section#estudies ul {
+    margin-bottom: 1rem;
+}
+
+section#estudies li {
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--color-texto);
+}
+
+
+/* Section Experiencia*/
+
+section#experience ul {
+    margin-bottom: 1rem;
+}
+
+section#experience li {
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--color-texto);
+}
+
+
+/* Section Sobre mí*/
+
+section#about p {
+    width: 60%;
+    padding-top: 2%;
+    padding-left: 12%;
+}
+
+
+/* Section CONTACT */
+
+section#contact p {
+    line-height: 1.5;
+    margin: 1.8rem 0;
+}
+
+section#contact ul {
+    margin-bottom: 1rem;
+}
+
+section#contact li {
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--color-autores);
+}
+
+section#contact li.form-group label {
+    display: none;
+}
+
+section#contact li.form-group input,
+section#contact li.form-group textarea {
+    width: 100%;
+    border: 0px solid;
+    font-size: 1.5rem;
+    font-family: 'Lora', serif;
+    color: var(--color-autores);
+}
+
+section .boton {
+    display: block;
+    color: var(--color-fondo);
+    background-color: var(--color-boton);
+    font-size: 14px;
+    font-weight: 800;
+    padding: 15px 25px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border-radius: 0;
+    font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
 
@@ -175,4 +335,54 @@ body>footer nav {
 
 body>footer small {
     color: var(--color-fondo);
+}
+
+@media screen and (min-width: 900px) {
+    .hide {
+        display: initial;
+    }
+    nav.menu-icon,
+    nav.menu-bottom {
+        display: none;
+    }
+    .header-wrapper {
+        display: flex;
+        position: fixed;
+        z-index: 2;
+        left: 0;
+        right: 0;
+        justify-content: space-around;
+        align-items: baseline;
+        color: var(--color-nav);
+        background-color: var(--color-cabecera)
+    }
+    /* flex items */
+    .header-wrapper header {
+        position: static;
+        padding-top: 2rem;
+        padding-bottom: 1rem;
+    }
+    nav.menu-top {
+        position: static;
+        width: auto;
+        color: inherit;
+        background-color: inherit;
+    }
+    nav.menu-top li {
+        display: inline-block;
+    }
+    nav.menu-top a:hover {
+        color: antiquewhite;
+        background-color: var(--color-nav);
+        transform: scale(1.2);
+    }
+    section .content-wrapper,
+    nav.content-wrapper {
+        width: 75%;
+        max-width: 70rem;
+        margin-top: 2rem;
+    }
+    .active {
+        color: var(--color-activo);
+    }
 }
