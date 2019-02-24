@@ -1,7 +1,7 @@
 /* Variables */
 
 :root {
-    --color-cabecera: rgb(249, 249, 249);
+    --color-cabecera: rgb(251, 252, 253);
     --color-texto: rgb(0, 0, 0);
     --color-nav: rgb(238, 120, 96);
     --color-fondo: rgb(241, 243, 245);
@@ -34,7 +34,7 @@ h3,
 h4,
 h5,
 h6 {
-    font-weight: 800;
+    font-weight: 500;
 }
 
 article p:nth-of-type(1) {
@@ -44,6 +44,20 @@ article p:nth-of-type(1) {
 article p,
 pre {
     font-family: 'Lora', serif;
+}
+
+
+/*  Imagen */
+
+figure.imagen {
+    height: 100%;
+    width: 100%;
+}
+
+section .foto-wrapper {
+    margin: 1rem;
+    display: flex;
+    flex-direction: row;
 }
 
 .foto-wrapper a:link {
@@ -69,6 +83,7 @@ pre {
     background-color: transparent;
     text-decoration: underline;
 }
+
 
 
 /* Elementos iniciales: Header y Nav*/
@@ -130,7 +145,7 @@ footer nav li {
 /* HEADER interno con IMAGEN DE FONDO */
 
 section header {
-    height: 50vh;
+    height: 20vh;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
@@ -138,8 +153,10 @@ section header {
     position: relative;
 }
 
-section#who header {
-    background-image: url(./asset/home.jpg);
+
+section#home header {
+    height: 100vh;
+    background-image: url(./asset/header.jpg);
 }
 
 section .title-wrapper {
@@ -149,8 +166,7 @@ section .title-wrapper {
     width: 40%;
     top: 50%;
     left: 50%;
-    background-color: rgba(255, 99, 71, 0.7);
-    color: rgba(247, 240, 239, 0.7);
+    color: var(--color-nav);
     transform: translate(-50%, -50%);
     text-align: center;
 }
@@ -169,11 +185,13 @@ section header::after {
 section .content-wrapper,
 nav.content-wrapper {
     width: 67%;
+    height: 20%;
     margin-left: auto;
     margin-right: auto;
     margin-top: 2rem;
     margin-bottom: 2rem;
 }
+
 
 section .content-wrapper h2 {
     color: rgba(32, 74, 138, 0.7);
@@ -184,9 +202,8 @@ section .content-wrapper footer>p {
 }
 
 
-/* Section WHO (POSTS) */
-
-section#who header h1 {
+/* Section HOME (POSTS) */
+section#home header h1 {
     font-size: 0.2rem;
     margin-bottom: 2rem;
     display: inline-block;
@@ -194,7 +211,7 @@ section#who header h1 {
     animation-fill-mode: forwards;
 }
 
-section#who p {
+section#home p {
     width: 60%;
     padding-top: 2%;
     padding-left: 12%;
@@ -228,19 +245,17 @@ section#who p {
 }
 
 
-/*  Imagen */
+/* SECTION */
 
-figure.imagen {
-    height: 8%;
-    width: 8%;
+/* Section who
+   Sobre mí
+*/
+
+section#who p,
+section#about p {
+    padding-top: 2rem;
+    margin-bottom: 1rem;
 }
-
-section .foto-wrapper {
-    margin: 1rem;
-    display: flex;
-    flex-direction: row;
-}
-
 
 /* Section Estudios*/
 
@@ -265,15 +280,6 @@ section#experience li {
     padding-top: 2rem;
     padding-bottom: 1rem;
     border-bottom: 1px solid var(--color-texto);
-}
-
-
-/* Section Sobre mí*/
-
-section#about p {
-    width: 60%;
-    padding-top: 2%;
-    padding-left: 12%;
 }
 
 
@@ -346,6 +352,7 @@ body>footer small {
     color: var(--color-fondo);
 }
 
+/* Utilizamos @media querys para optimizar la pagina a los diferentes tamaños*/
 @media screen and (min-width: 900px) {
     .hide {
         display: initial;
