@@ -313,6 +313,16 @@ section#contact li.form-group textarea {
     color: var(--color-autores);
 }
 
+section#contacto li select {
+    margin-left: 2rem;
+    width: 50%;
+    border: 0px solid;
+    font-size: 1rem;
+    font-family: 'Lora', serif;
+    color:  var(--color-autores);
+
+}
+
 section .boton {
     display: block;
     color: var(--color-fondo);
@@ -324,6 +334,9 @@ section .boton {
     text-transform: uppercase;
     border-radius: 0;
     font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+.oculto {
+    display: none;
 }
 
 
@@ -395,7 +408,7 @@ body>footer small {
     section .content-wrapper,
     nav.content-wrapper {
         width: 75%;
-        max-width: 70rem;
+        max-width: 50rem;
         margin-top: 2rem;
         margin-bottom: 4rem;
     }

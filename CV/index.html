@@ -13,6 +13,8 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css">
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="style.css">
+    <!-- import Js -->
+    <script src="./js/app.js" type="module"></script>
 </head>
 
 <body>
@@ -28,22 +30,22 @@
         <nav id="menu-top" class="menu-top hide">
             <ul>
                 <li>
-                    <a href="./index.html#home">Home</a>
+                    <a data-index="0" href="#home" >Inicio</a>
                 </li>
                 <li>
-                    <a href="./index.html#who">Quien Soy</a>
+                    <a data-index="1" href="#quien">Quien soy</a>
                 </li>
                 <li>
-                    <a href="./index.html#estudies">Estudios</a>
+                    <a data-index="2" href="#estudios">Estudios</a>
                 </li>
                 <li>
-                    <a href="./index.html#experience">Experiencia</a>
+                    <a data-index="3" href="#experiencia">Experiencia</a>
                 </li>
                 <li>
-                    <a href="./index.html#about">Sobre mi</a>
+                    <a data-index="4" href="#about">Sobre mí</a>
                 </li>
                 <li>
-                    <a href="./index.html#contact">Contacto</a>
+                    <a data-index="5" href="#contacto">Contacto</a>
                 </li>
             </ul>
         </nav>
@@ -52,7 +54,7 @@
     <section id="home">
         <header>
             <div class="title-wrapper">
-                <h1 class="h1-section">CV Daniel Rodríguez</h1>
+                <h1>CV Daniel Rodríguez</h1>
             </div>
         </header>
     </section>
@@ -60,7 +62,7 @@
     <section id="who">
         <header> 
             <div class="title-wrapper">
-                <h2 class="h1-section">Quién soy</h2>
+                <h2>Quién soy</h2>
             </div>
         </header>
         <div class="content-wrapper">
@@ -85,7 +87,7 @@
     <section id="estudies">
         <header> 
             <div class="title-wrapper">
-                <h2 class="h1-section">Estudios</h2>
+                <h2>Estudios</h2>
                 <p>Formación académica y cursos</p>
             </div>
         </header>    
@@ -112,7 +114,7 @@
     <section id="experience">
         <header> 
             <div class="title-wrapper">
-                <h2 class="h1-section">Experiencia</h2>
+                <h2>Experiencia</h2>
                 <p>Experiencia Laboral</p>
             </div>
         </header> 
@@ -171,7 +173,7 @@
     <section id="about">
         <header> 
             <div class="title-wrapper">
-                <h2 class="h1-section">Sobre mí</h2>
+                <h2>Sobre mí</h2>
             </div>
         </header> 
         <div class="content-wrapper">
@@ -195,7 +197,7 @@
     <section id="contact">
         <header> 
             <div class="title-wrapper">
-                <h2 class="h1-section">Contactame</h2>
+                <h2>Contactame</h2>
                 <p>Si quieres contactar conmigo</p>
             </div>
         </header> 
@@ -218,6 +220,18 @@
                         <label for="message">Message</label>
                         <textarea name="message" id="message" cols="30" rows="10" placeholder="Message"></textarea>
                     </li>
+                    <li>
+                        <label for="selection">Como nos has encontrado</label>
+                        <select name="selection" id="selection" required>
+                            <option value="google">Google</option>
+                            <option value="linkedin">Linkedin</option>
+                            <option value="otros">Otros</option>
+                        </select>
+                    </li>
+                    <li class="form-group oculto">
+                        <label for="name">Como nos has encontrado</label>
+                        <input type="text" name="selection-otro" id="selection-otro" placeholder="Como nos has encontrado">
+                    </li>    
                     <li>
                         <input type="checkbox" name="condiciones" id="condiciones">
                         <label for="condiciones">Acepto las condiciones </label>
