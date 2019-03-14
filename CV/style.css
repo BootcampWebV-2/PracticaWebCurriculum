@@ -156,7 +156,7 @@ section header {
 
 section#home header {
     height: 100vh;
-    background-image: url(./asset/header.jpg);
+    background-image: url(./Asset/header.jpg);
 }
 
 section .title-wrapper {
